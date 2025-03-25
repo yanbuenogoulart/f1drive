@@ -4,6 +4,7 @@
 }
 
 body{
+    height: 100vh;
     background-color: #3b3b3b;
 }
 
@@ -14,5 +15,14 @@ canvas{
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(black, rgb(255, 255, 255))
+    background-image: url(assets/desert.png);
+    background-position: center;
+}
+
+body {
+    background-image: url(https://images.stockcake.com/public/6/2/3/62348f6b-7e0c-4426-8243-c896ead95b11_large/desert-car-adventure-stockcake.jpg);
+    background-size: 100%;
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
 }
