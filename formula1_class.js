@@ -63,8 +63,8 @@ class Carro extends Obj {
 }
 
 class Carro2 extends Carro {
-    mov_carro2() {
-        this.y += 15;
+    mov_carro2(velocidadeCarros) {
+        this.y += velocidadeCarros;
         if(this.y >= 780) this.recomeca();
     }
     
