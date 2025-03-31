@@ -10,6 +10,9 @@ let gasosa = new Carro2(200, -30, 80,80, './assets/gascan.png')
 let gasolina = 100
 let gasQuantRect = 40
 
+let bgY = 0
+let bgVelocity = .5
+
 let quantFase2 = 75
 let quantFase3 = 150
 
@@ -41,7 +44,7 @@ let t5 = new Text();
 let gasolinaText= new Text();
 let t6 = new Text();
 
-let motor = new Audio('./assets/motor.wav');
+let motor = new Audio('./assets/musica.wav');
 let batida = new Audio('./assets/batida.mp3');
 motor.volume = 0.8;
 motor.loop = true;
@@ -72,7 +75,7 @@ document.addEventListener('keyup', (e) => {
 function game_over() {
     if(carro.vida <= 0 || gasolina <= 0) {
         jogar = false;
-        motor.pause();
+        batida.play();
     }
 }
 
@@ -85,13 +88,10 @@ function pontos() {
 function colisao() {
     if(carro.colid(c2)) {
         carro.vida -= 1;
-        c2.recomeca();
-        batida.play();
-    }
+        c2.recomeca();    }
     if(carro.colid(c3)) {
         carro.vida -= 1;
         c3.recomeca();
-        batida.play();
     } 
     if(carro.colid(obstaculo1)) {
         carro.vida -= .5
@@ -143,6 +143,9 @@ function fases() {
 
 function desenha() {
     des.clearRect(0, 0, canvas.width, canvas.height);
+
+    bgY += bgVelocity;
+    canvas.style.backgroundPositionY = `${bgY}px`
     
     t1.des_text('Pontos: ', 360, 24, 'yellow', '26px Times');
     t2.des_text(carro.pts, 442, 24, 'yellow', '26px Times');
@@ -172,6 +175,7 @@ function desenha() {
         gasosa.des_car_img();
         c3.des_car_img();
         carro.des_car_img();
+        motor.play()
     } else {
         c1.des_carro();
         ee.des_estrada();

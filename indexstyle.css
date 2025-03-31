@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url('https://images.stockcake.com/public/6/2/3/62348f6b-7e0c-4426-8243-c896ead95b11_large/desert-car-adventure-stockcake.jpg'); /* Substitua pelo seu background */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+.controls {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.controls p {
+    font-size: 20px;
+    margin: 5px 0;
+}
+.play-button {
+    margin-bottom: 30px;
+    background: #ffcc00;
+    color: black;
+    font-size: 24px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.play-button:hover {
+    background: #ffaa00;
+}
